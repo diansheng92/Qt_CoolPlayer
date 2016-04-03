@@ -4,7 +4,9 @@
 #include <QtMultimedia>
 #include <QMediaPlayer>
 #include <QFileDialog>
-#include <QMessageBox>
+#include <QMediaPlaylist>
+#include <QListWidgetItem>
+#include <QFileInfo>
 CoolPlayer::CoolPlayer(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CoolPlayer)
@@ -18,13 +20,25 @@ CoolPlayer::~CoolPlayer()
     delete ui;
 }
 
-void CoolPlayer::on_PlayMusic_clicked()
+
+void CoolPlayer::on_OpenFile_clicked()
 {
-    QString filename = QFileDialog::getOpenFileName(this,tr("Open File"),"C:/Users/sheng/Dropbox/workspace/QT/CoolPlayer/"
+    //open the file in folder browser.
+    QFileInfo filename = QFileDialog::getOpenFileName(this,tr("Open File"),"C:/Users/sheng/Dropbox/workspace/QT/CoolPlayer/"
                                                     ,"All files (*.*);;Music File (*.mp3)");
-    //QMessageBox::information(this,tr("File Name"),filename);
-    player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile(filename));
+    QString name = filename.fileName();
+    ui->PlayList->addItem(name);
+    player->setMedia(QUrl::fromLocalFile(filename.absoluteFilePath()));
     player->setVolume(50);
     player->play();
+}
+
+void CoolPlayer::on_PauseMusic_clicked()
+{
+    player->QMediaPlayer::pause();
+}
+
+void CoolPlayer::on_PlayMusic_clicked()
+{
+    player->QMediaPlayer::play();
 }

@@ -6,26 +6,67 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>632</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CoolPlayer</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="PlayMusic">
+   <widget class="QPushButton" name="OpenFile">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>160</y>
+      <x>450</x>
+      <y>360</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>OpenFile</string>
     </property>
+   </widget>
+   <widget class="QPushButton" name="PauseMusic">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>360</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PauseMusic</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PlayMusic">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>360</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PlayMusic</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="PlayList">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>0</y>
+      <width>261</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -33,7 +74,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>632</width>
      <height>26</height>
     </rect>
    </property>

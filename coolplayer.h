@@ -16,6 +16,10 @@ public:
     ~CoolPlayer();
 
 private slots:
+    void on_OpenFile_clicked();
+
+    void on_PauseMusic_clicked();
+
     void on_PlayMusic_clicked();
 
 private:
