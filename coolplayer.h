@@ -22,6 +22,10 @@ private slots:
 
     void on_PlayMusic_clicked();
 
+    void on_PlayList_doubleClicked(const QModelIndex &index);
+
+    void on_Volume_valueChanged(int value);
+
 private:
     Ui::CoolPlayer *ui;
     QMediaPlayer *player;
